@@ -1,15 +1,12 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.less'
+import { ConfigProvider } from 'antd'
+
 import App from './App.tsx'
-import { request } from './utils/request.ts'
 
-const a = await request.get('/api/users')
-
-console.log(a)
+import './index.css'
 
 createRoot(document.getElementById('root')!).render(
-    <StrictMode>
+    <ConfigProvider>
         <App />
-    </StrictMode>
+    </ConfigProvider>
 )
